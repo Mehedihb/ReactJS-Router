@@ -34,20 +34,25 @@
         margin: 0px;
         padding: 0px;
 }
+html, body, #root, #root>div {
+        height: 100%
+      }
 body {
         font-family: "Open Sans", sans-serif;
         font-size: var(--font14);
         font-weight: 500; 
-        height: 100%;
 }
-body #root {
-        height: 100%;
-}
+
 /* >>>>> Error Page ----------*/
-.errorPage{
+.errorPage {
         height: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
         background-color: var(--white);
+}
+.errorPage .errorContent {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 }

@@ -16,6 +16,7 @@
 .mainNavbar-inner .brandLogo {
     height: auto;
     max-width: 180px;
+    margin: 0px 0px 0px 15px;
 }
 
 .mainNavbar-inner .navMenu {
@@ -30,7 +31,7 @@
     font-weight: 600;
     font-size: var(--font14);
     cursor: pointer;
-    margin: 0px 20px 0px 0px;
+    margin: 0px 15px 0px 0px;
     text-decoration: none;
 }
 .mainNavbar-inner .navMenu li a:hover {

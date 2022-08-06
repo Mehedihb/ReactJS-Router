@@ -4,12 +4,13 @@ import React from 'react'
 const Error = () => {
   return (
     <>
-        <div className='errorPage'>
-            <img alt='IMG' src='https://bobbyhadz.com/images/blog/react-prevent-multiple-button-clicks/thumbnail.webp'/>
-            <div>Error</div>
+      <div className='errorPage'>
+        <div className='errorContent'>
+          <img src={require('../assets/img/error-404.svg').default} alt='mySvgImage' />
+          <div>Error</div>
         </div>
+      </div>
     </>
-
   )
 }
 
