@@ -25,13 +25,17 @@
     justify-content: center;
 }
 
-.mainNavbar-inner .navMenu li {
+.mainNavbar-inner .navMenu li a {
     color: var(--black);
     font-weight: 600;
     font-size: var(--font14);
     cursor: pointer;
     margin: 0px 20px 0px 0px;
+    text-decoration: none;
 }
-.mainNavbar-inner .navMenu li:hover {
+.mainNavbar-inner .navMenu li a:hover {
+    color: var(--brand-color);
+}
+.mainNavbar-inner .navMenu li a.active {
     color: var(--brand-color);
 }
