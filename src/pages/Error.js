@@ -1,13 +1,18 @@
 import React from 'react'
-// const ErrorIllustration = require('../assets/img/error-404.svg')
+import { useNavigate } from 'react-router-dom';
 
 const Error = () => {
+  const navigate = useNavigate();
   return (
     <>
       <div className='errorPage'>
         <div className='errorContent'>
           <img src={require('../assets/img/error-404.svg').default} alt='mySvgImage' />
-          <div>Error</div>
+          <button
+            onClick={() => {
+              navigate('/')
+            }}
+            type="button" class="btn btn-primary">Back to Home</button>
         </div>
       </div>
     </>

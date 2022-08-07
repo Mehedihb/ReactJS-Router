@@ -56,3 +56,7 @@ body {
         flex-direction: column;
         align-items: center;
 }
+
+.errorPage .errorContent img{
+        width: 400px;
+}

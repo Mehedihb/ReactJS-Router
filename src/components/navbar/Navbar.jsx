@@ -5,7 +5,7 @@ import './Navbar.css'
 const Navbar = () => {
     return (
         <div className="mainNavbar">
-            <div className="container mainNavbar-inner">
+            <div className="container-fluid mainNavbar-inner">
                 <div className='brandLogo'>
                     <svg xmlns="http://www.w3.org/2000/svg" width="186" height="50" viewBox="0 0 186 50">
                         <g id="Logo" transform="translate(6491 4837)">
