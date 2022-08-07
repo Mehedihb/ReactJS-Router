@@ -1,6 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Navbar from '../components/navbar/Navbar';
-import { useState } from 'react';
 import BlogData from '../data/BlogData'
 import { Link } from 'react-router-dom';
 

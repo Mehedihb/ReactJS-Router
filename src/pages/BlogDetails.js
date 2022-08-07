@@ -1,17 +1,19 @@
-import React from 'react'
-import { useState } from 'react'
+import React, {useState,useEffect} from 'react'
 import Navbar from '../components/navbar/Navbar'
-import { useParams } from 'react-router-dom'
 import BlogData from '../data/BlogData'
+import { useParams } from 'react-router-dom'
 
 const BlogDetails = () => {
-    
     const {id}= useParams()
-    console.log (id)
+    const [DataBody, setBodayData] = useState("")
+    useEffect(()=>{
+     const newData = BlogData.filter((blog)=>blog.id === id);
+      setBodayData(newData[0].author);
+    },[])
   return (
     <>
     <Navbar/>
-    <div>BlogDetails</div>
+    <h1>{DataBody}</h1>
     </>
   )
 }
