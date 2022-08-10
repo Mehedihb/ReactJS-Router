@@ -15,8 +15,8 @@ const Blog = () => {
         {Blog.map((singleBlog) => {
           const { id, author, title, description } = singleBlog;
           return (
-            <article>
-              <Link to={id}>{id}</Link>
+            <article key={id}>
+              <Link to={`/blog/${id}`}>{id}</Link>
               <h5>{author}</h5>
               <h6>{title}</h6>
             </article>
