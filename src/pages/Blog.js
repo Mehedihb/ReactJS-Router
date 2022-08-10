@@ -10,7 +10,7 @@ const Blog = () => {
   return (
     <>
       <Navbar />
-      <h3>This is Blog Page</h3>
+      <h3>This is Blog Page 2</h3>
       <section>
         {Blog.map((singleBlog) => {
           const { id, author, title, description } = singleBlog;
