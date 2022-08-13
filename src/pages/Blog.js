@@ -5,9 +5,7 @@ import { Link } from 'react-router-dom';
 
 
 const Blog = () => {
-  const [Blog, setBlog] = useState(BlogData)
- const [descriptionData, setdescription]= useState({})
-  console.log(Blog)
+  const [descriptionData, setdescription] = useState({})
   return (
     <>
       <Navbar />
@@ -15,7 +13,7 @@ const Blog = () => {
       <section className='container-fluid h-100'>
         <div className='row h-100'>
           <div className='col-3 overflow-auto h-100'>
-            {Blog.map((singleBlog) => {
+            {BlogData.map((singleBlog) => {
               const { id, author, title, description } = singleBlog;
               return (
                 <div className="card">
@@ -23,7 +21,7 @@ const Blog = () => {
                     <h5 className="card-title">{author}</h5>
                     <p className="card-text">{title}</p>
                     <Link to={`/blog/${id}`} className="btn btn-primary">{id}</Link>
-                    <button type="button" onClick={()=>{
+                    <button type="button" onClick={() => {
                       setdescription(singleBlog)
 
                     }} className="btn btn-success m-2" data-bs-toggle="modal" data-bs-target="#exampleModal">View</button>
@@ -40,11 +38,11 @@ const Blog = () => {
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header">
-              <h5 className="modal-title" id="exampleModalLabel"> {descriptionData.title}</h5>
+              <h5 className="modal-title" id="exampleModalLabel">{descriptionData.title}</h5>
               <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div className="modal-body">
-              ...
+              {descriptionData.description}
             </div>
             <div className="modal-footer">
               <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
