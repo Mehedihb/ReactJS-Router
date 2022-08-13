@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 
 const Blog = () => {
   const [Blog, setBlog] = useState(BlogData)
+ const [descriptionData, setdescription]= useState({})
   console.log(Blog)
   return (
     <>
@@ -22,6 +23,10 @@ const Blog = () => {
                     <h5 className="card-title">{author}</h5>
                     <p className="card-text">{title}</p>
                     <Link to={`/blog/${id}`} className="btn btn-primary">{id}</Link>
+                    <button type="button" onClick={()=>{
+                      setdescription(singleBlog)
+
+                    }} className="btn btn-success m-2" data-bs-toggle="modal" data-bs-target="#exampleModal">View</button>
                   </div>
                 </div>
               )
@@ -31,6 +36,23 @@ const Blog = () => {
         </div>
       </section>
 
+      <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="exampleModalLabel"> {descriptionData.title}</h5>
+              <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div className="modal-body">
+              ...
+            </div>
+            <div className="modal-footer">
+              <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" className="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
     </>
   )
