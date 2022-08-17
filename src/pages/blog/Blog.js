@@ -30,8 +30,9 @@ export const BlogSidebar = () => {
               <div className="card-body" key={id}>
                 <h5 className="card-title">{author}</h5>
                 <p className="card-text">{title}</p>
-                <Link to={`/blog/${id}`} className="btn btn-primary">{id}</Link>
-                <button type="button" onClick={() => {setdescription(singleBlog)}} className="btn btn-success m-2" data-bs-toggle="modal" data-bs-target="#exampleModal">View BModal</button>
+                <Link to={`/blog/${id}`} className="btn btn-primary">View Page</Link>
+                <button type="button" className="btn btn-success m-2" onClick={() => {setdescription(singleBlog)}} data-bs-toggle="modal" data-bs-target="#exampleModal">View BModal</button>
+                <button type="button" className="btn btn-dark">View Details</button>
               </div>
             </div>
           )
