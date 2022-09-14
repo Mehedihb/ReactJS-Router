@@ -4,35 +4,35 @@ import BlogData from '../../data/BlogData'
 import { Link } from 'react-router-dom';
 
 const Blog = () => {
+  const [passData, setPassData] = useState({})
   return (
     <>
       <Navbar />
       <section className='container-fluid h-100'>
         <div className='row h-100'>
-          <BlogSidebar />
-          <BlogInDetails/>
+          <BlogSidebar getData={setPassData} />
+          <BlogInDetails title={passData.author} author={passData.title} description={passData.description} />
         </div>
       </section>
     </>
   )
 }
 
-
-export const BlogSidebar = () => {
+export const BlogSidebar = (props) => {
   const [descriptionData, setdescription] = useState({})
   return (
     <>
       <div className='col-3 overflow-auto h-100'>
         {BlogData.map((singleBlog) => {
-          const { id, author, title, description } = singleBlog;
+          const { id, author, title } = singleBlog;
           return (
-            <div className="card">
-              <div className="card-body" key={id}>
+            <div className="card" key={id}>
+              <div className="card-body">
                 <h5 className="card-title">{author}</h5>
                 <p className="card-text">{title}</p>
                 <Link to={`/blog/${id}`} className="btn btn-primary">View Page</Link>
-                <button type="button" className="btn btn-success m-2" onClick={() => {setdescription(singleBlog)}} data-bs-toggle="modal" data-bs-target="#exampleModal">View BModal</button>
-                <button type="button" className="btn btn-dark">View Details</button>
+                <button type="button" className="btn btn-success m-2" onClick={() => { setdescription(singleBlog) }} data-bs-toggle="modal" data-bs-target="#exampleModal">View BModal</button>
+                <button onClick={() => { props.getData(singleBlog) }} type="button" className="btn btn-dark">View Details</button>
               </div>
             </div>
           )
@@ -55,16 +55,16 @@ export const BlogSidebar = () => {
           </div>
         </div>
       </div>
-
     </>
   )
 }
 
-
-export const BlogInDetails = () => {
+export const BlogInDetails = (props) => {
   return (
     <div className='col-9'>
-      <h1>Hello</h1>
+      <h5>{props.title}</h5>
+      <h6>{props.author}</h6>
+      <p>{props.description}</p>
     </div>
   )
 }
